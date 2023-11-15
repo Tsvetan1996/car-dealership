@@ -1,5 +1,6 @@
 .dashboardContainer {
-  max-width: 800px;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* Set a maximum width if necessary */
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -7,8 +8,40 @@
   border-radius: 5px;
 }
 
-.dashboardContainer h2 {
-  color: #333;
+.productCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-/* Add more styles as needed */
+.productImage {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.productInfo {
+  text-align: center;
+}
+
+.productInfo h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.productInfo p {
+  margin: 5px 0;
+  font-size: 1.2em;
+}
+
+.detailsButton {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
