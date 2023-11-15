@@ -1,0 +1,25 @@
+.homeContainer {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.overlay h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.overlay p {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
