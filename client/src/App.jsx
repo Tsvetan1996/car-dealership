@@ -3,6 +3,7 @@ import "./App.module.css";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Dashboard from "./components/dashboard/Dashboard";
+import SellCar from "./components/sell-car/SellCar";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/cars" element={<Dashboard />} />
+        <Route path="/cars/sell" element={<SellCar />} />
       </Routes>
     </div>
   );

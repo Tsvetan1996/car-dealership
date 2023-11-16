@@ -11,7 +11,10 @@ export default function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/cars">All cars</Link>
+          </li>
+          <li>
+            <Link to="/cars/sell">Sell car</Link>
           </li>
           <li>
             <Link to="#login">Login</Link>

@@ -1,13 +1,3 @@
-.dashboardContainer {
-  width: 80%; /* Adjust the width as needed */
-  max-width: 600px; /* Set a maximum width if necessary */
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
-
 .productCard {
   display: flex;
   flex-direction: column;

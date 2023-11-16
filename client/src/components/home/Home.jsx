@@ -5,7 +5,6 @@ export default function Home() {
     <div className={styles.homeContainer}>
       <div className={styles.overlay}>
         <h1>Welcome to My React App</h1>
-        {/* Add more content as needed */}
       </div>
     </div>
   );
