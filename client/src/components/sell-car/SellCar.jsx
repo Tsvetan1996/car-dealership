@@ -7,6 +7,7 @@ const SellCar = () => {
   const navigate = useNavigate();
 
   const initialFormData = {
+    imageUrl: "",
     brand: "",
     model: "",
     year: "",
@@ -27,7 +28,6 @@ const SellCar = () => {
     e.preventDefault();
 
     const carData = Object.fromEntries(new FormData(e.currentTarget));
-    console.log(carData);
 
     try {
       await carService.sell(carData);

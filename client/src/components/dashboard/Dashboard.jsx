@@ -10,8 +10,6 @@ export default function Dashboard() {
     carService.getAll().then((result) => setCars(result));
   }, []);
 
-  console.log(cars);
-
   return (
     <div className={styles.dashboardContainer}>
       {cars.map((car) => (
