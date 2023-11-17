@@ -1,6 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from "./DashboardItem.module.css";
 
-export default function DashboardItem({ imageUrl, brand, model, year, price }) {
+export default function DashboardItem({
+  _id,
+  imageUrl,
+  brand,
+  model,
+  year,
+  price,
+}) {
   return (
     <div className={styles.productCard}>
       <img className={styles.productImage} src={imageUrl} alt="Car" />
@@ -9,7 +17,9 @@ export default function DashboardItem({ imageUrl, brand, model, year, price }) {
         <p>{model}</p>
         <p>Year: {year}</p>
         <p>Year: {price}$</p>
-        <button className={styles.detailsButton}>Details</button>
+        <Link to={`/details/${_id}`} className={styles.detailsButton}>
+          Details
+        </Link>
       </div>
     </div>
   );
