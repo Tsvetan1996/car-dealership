@@ -12,6 +12,7 @@ const SellCar = () => {
     model: "",
     year: "",
     price: "",
+    description: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -84,6 +85,15 @@ const SellCar = () => {
           id="price"
           name="price"
           value={formData.price}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="description">Description:</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          value={formData.description}
           onChange={handleChange}
         />
 

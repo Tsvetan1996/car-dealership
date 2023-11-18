@@ -16,7 +16,7 @@ export default function DashboardItem({
         <h3>{brand}</h3>
         <p>{model}</p>
         <p>Year: {year}</p>
-        <p>Year: {price}$</p>
+        <p>Price: {price}$</p>
         <Link to={`/details/${_id}`} className={styles.detailsButton}>
           Details
         </Link>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import * as carService from "../../services/carService";
 import styles from "./CarDetails.module.css";
 
@@ -28,6 +28,12 @@ export default function CarDetails() {
         <p>
           <strong>Price:</strong> {car.price}
         </p>
+        <p>
+          <strong>Description:</strong> {car.description}
+        </p>
+        <Link to={"/cars"} className={styles.backButton}>
+          Back
+        </Link>
       </div>
     </div>
   );
