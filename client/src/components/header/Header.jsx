@@ -17,10 +17,10 @@ export default function Header() {
             <Link to="/cars/sell">Sell car</Link>
           </li>
           <li>
-            <Link to="#login">Login</Link>
+            <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="#register">Register</Link>
+            <Link to="/register">Register</Link>
           </li>
         </ul>
       </nav>
