@@ -1,67 +1,53 @@
-import React, { useState } from "react";
+import { useContext } from "react";
+import AuthContext from "../../contexts/AuthContext";
+import useForm from "../../hooks/useForm";
 import { Link } from "react-router-dom";
+
 import styles from "./Register.module.css";
 
+const RegisterFormKeys = {
+  email: "email",
+  password: "password",
+  confirmPassword: "confirmPassword",
+};
+
 export default function Register() {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+  const { registerSubmitHandler } = useContext(AuthContext);
+  const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    [RegisterFormKeys.email]: "",
+    [RegisterFormKeys.password]: "",
+    [RegisterFormKeys.confirmPassword]: "",
   });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO - add logic
-    console.log("Registration form submitted:", formData);
-  };
 
   return (
     <div className={styles.registerContainer}>
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-        />
-
+      <form onSubmit={onSubmit}>
         <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
+          name={RegisterFormKeys.email}
+          value={values[RegisterFormKeys.email]}
+          onChange={onChange}
         />
 
         <label htmlFor="password">Password:</label>
         <input
           type="password"
           id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
+          name={RegisterFormKeys.password}
+          value={values[RegisterFormKeys.password]}
+          onChange={onChange}
         />
 
         <label htmlFor="confirmPassword">Confirm Password:</label>
         <input
           type="password"
           id="confirmPassword"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
+          name={RegisterFormKeys.confirmPassword}
+          value={values[RegisterFormKeys.confirmPassword]}
+          onChange={onChange}
         />
 
         <button type="submit">Register</button>
