@@ -46,18 +46,6 @@ export const logout = async () => {
     ...buildOptions(),
     method: "GET",
   });
-
-  if (response.status === 204) {
-    return {};
-  }
-
-  const result = await response.json();
-
-  if (!response.ok) {
-    throw result;
-  }
-
-  return result;
 };
 
 export const register = async (email, password) => {

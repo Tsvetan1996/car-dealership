@@ -1,20 +1,13 @@
-{
-  "2fdc14be-5c87-429c-b901-67de672f3ebc": {
-    "brand": "Audi",
-    "imageUrl": "https://www.topgear.com/sites/default/files/2023/09/33156-RS7PERFORMANCEASCARIBLUEJORDANBUTTERS132.jpg",
-    "model": "RS7",
-    "price": "150000",
+[
+  {
+    "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+    "imageUrl": "https://i.ytimg.com/vi/7O8RU0bl0_E/maxresdefault.jpg",
+    "brand": "BMW",
+    "model": "X6",
     "year": "2023",
-    "description": "Audi RS7 4.0 TFSI 560кс. Автомобилът е регистриран с всичко платено. Без никакви забележки. Най-високо ниво на оборудване! Оглед с предварителна уговорка!",
-    "_id": "2fdc14be-5c87-429c-b901-67de672f3ebc"
-  },
-  "6a5c52f7-eec4-4cb9-8a7f-91da4f3ba5af": {
-    "imageUrl": "https://www.mercedes-benz.bg/passengercars/mercedes-benz-cars/models/gle/coupe-c167/explore/highlights/_jcr_content/contentgallerycontainer/par/contentgallery/par/contentgallerytile_58586423/image.MQ6.8.20191202040825.jpeg",
-    "brand": "Mercedes-Benz",
-    "model": "GLE",
-    "year": "2023",
-    "price": "185000",
-    "description": "Напълно обслужен! Сервизиран само в официалния сервиз! Нови зимни и летни гуми! Остатъчен лизинг 44000 лева, с възможност за встъпване в лизинга! Автомобилът е в отлично състояние!",
-    "_id": "6a5c52f7-eec4-4cb9-8a7f-91da4f3ba5af"
+    "price": "180000",
+    "description": "some description",
+    "_createdOn": 1701790465334,
+    "_id": "9c87336e-bca7-4bbe-b4c0-aa2e28509633"
   }
-}
+]

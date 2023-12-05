@@ -29,6 +29,7 @@ const SellCar = () => {
     e.preventDefault();
 
     const carData = Object.fromEntries(new FormData(e.currentTarget));
+    console.log(carData);
 
     try {
       await carService.sell(carData);

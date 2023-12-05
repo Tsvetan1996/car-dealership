@@ -1,4 +1,4 @@
-const baseUrl = "http://127.0.0.1:3030/jsonstore/cars";
+const baseUrl = "http://127.0.0.1:3030/data/cars";
 
 export const getAll = async () => {
   const response = await fetch(baseUrl);
@@ -19,10 +19,15 @@ export const getSingleCar = async (carId) => {
 };
 
 export const sell = async (carData) => {
+  const token = localStorage.getItem("accessToken");
+  if (!token) return;
+  console.log(token);
+
   const response = await fetch(baseUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "X-Authorization": token,
     },
     body: JSON.stringify(carData),
   });
