@@ -42,7 +42,7 @@ export const login = async (email, password) => {
 };
 
 export const logout = async () => {
-  const response = await fetch(`${baseUrl}/logout`, {
+  await fetch(`${baseUrl}/logout`, {
     ...buildOptions(),
     method: "GET",
   });

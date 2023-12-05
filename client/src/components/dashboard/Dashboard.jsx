@@ -16,8 +16,8 @@ export default function Dashboard() {
   return (
     <div className={styles.dashboardContainer}>
       <h1>All cars</h1>
-      {cars.map((car, index) => (
-        <DashboardItem key={car._id || index} {...car} />
+      {cars.map((car) => (
+        <DashboardItem key={car._id} {...car} />
       ))}
 
       {cars.length === 0 && <h2>No cars to show!</h2>}

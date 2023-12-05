@@ -17,7 +17,15 @@ export default function useForm(submitHandler, initialValues) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    submitHandler(values);
+    try {
+      if (values.password !== values.confirmPassword) {
+        throw new Error("Passwords missmatch");
+      }
+
+      submitHandler(values);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return {
