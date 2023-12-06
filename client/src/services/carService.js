@@ -21,7 +21,6 @@ export const getSingleCar = async (carId) => {
 export const sell = async (carData) => {
   const token = localStorage.getItem("accessToken");
   if (!token) return;
-  console.log(token);
 
   const response = await fetch(baseUrl, {
     method: "POST",
@@ -31,6 +30,38 @@ export const sell = async (carData) => {
     },
     body: JSON.stringify(carData),
   });
+  const result = await response.json();
+  return result;
+};
+
+export const edit = async (carId, carData) => {
+  const token = localStorage.getItem("accessToken");
+  if (!token) return;
+
+  const response = await fetch(`${baseUrl}/${carId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Authorization": token,
+    },
+    body: JSON.stringify(carData),
+  });
+
+  const result = await response.json();
+  return result;
+};
+
+export const remove = async (carId) => {
+  const token = localStorage.getItem("accessToken");
+  if (!token) return;
+
+  const response = await fetch(`${baseUrl}/${carId}`, {
+    method: "DELETE",
+    headers: {
+      "X-Authorization": token,
+    },
+  });
+
   const result = await response.json();
   return result;
 };

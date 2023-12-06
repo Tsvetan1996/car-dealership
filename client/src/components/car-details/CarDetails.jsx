@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import * as carService from "../../services/carService";
 import AuthContext from "../../contexts/AuthContext";
 import { pathToUrl } from "../../utils/pathUtil";
@@ -7,6 +7,7 @@ import { pathToUrl } from "../../utils/pathUtil";
 import styles from "./CarDetails.module.css";
 
 export default function CarDetails() {
+  const navigate = useNavigate();
   const [car, setCar] = useState({});
   const { carId } = useParams();
 
@@ -16,6 +17,17 @@ export default function CarDetails() {
     carService.getSingleCar(carId).then(setCar);
   }, [carId]);
 
+  const deleteButtonHandler = async () => {
+    const confirmation = confirm(
+      `Are you sure you want to delete the ${car.brand} ${car.model}?`
+    );
+
+    if (confirmation) {
+      await carService.remove(carId);
+
+      navigate("/cars");
+    }
+  };
   return (
     <div className={styles.carDetailsContainer}>
       <h2>Car Details</h2>
@@ -47,9 +59,12 @@ export default function CarDetails() {
             >
               Edit
             </Link>
-            <Link to="/cars/:carId/delete" className={styles.actionButton}>
+            <button
+              className={styles.actionButton}
+              onClick={deleteButtonHandler}
+            >
               Delete
-            </Link>
+            </button>
           </>
         )}
       </div>
