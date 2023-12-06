@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as carService from "../../services/carService";
+import AuthContext from "../../contexts/AuthContext";
+import { pathToUrl } from "../../utils/pathUtil";
+
 import styles from "./CarDetails.module.css";
 
 export default function CarDetails() {
   const [car, setCar] = useState({});
   const { carId } = useParams();
+
+  const { userId } = useContext(AuthContext);
 
   useEffect(() => {
     carService.getSingleCar(carId).then(setCar);
@@ -31,9 +36,22 @@ export default function CarDetails() {
         <p>
           <strong>Description:</strong> {car.description}
         </p>
-        <Link to={"/cars"} className={styles.backButton}>
+        <Link to={"/cars"} className={styles.actionButton}>
           Back
         </Link>
+        {userId === car._ownerId && (
+          <>
+            <Link
+              to={pathToUrl("/cars/:carId/edit", { carId })}
+              className={styles.actionButton}
+            >
+              Edit
+            </Link>
+            <Link to="/cars/:carId/delete" className={styles.actionButton}>
+              Delete
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
