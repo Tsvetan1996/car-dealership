@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className={styles.appHeader}>
-      <h1>My React App</h1>
+      <h1>Car Dealership</h1>
       <nav className={styles.navBar}>
         <ul>
           <li>

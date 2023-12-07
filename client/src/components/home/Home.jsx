@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.overlay}>
-        <h1>Welcome to My React App</h1>
+        <h1>Search a car by brand or model</h1>
         <Search onSearch={handleSearch} />
 
         {searchPerformed && filteredCars.length > 0 ? (

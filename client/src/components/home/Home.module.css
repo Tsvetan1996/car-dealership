@@ -1,10 +1,13 @@
+/* Home.module.css */
+
 .homeContainer {
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align items to the top of the container */
+  flex-direction: column; /* Stack children vertically */
 }
 
 .overlay {
@@ -12,6 +15,8 @@
   padding: 20px;
   text-align: center;
   color: #fff;
+  animation: fadeIn 1s ease-in-out;
+  width: 100%; /* Make the overlay take the full width */
 }
 
 .overlay h1 {
@@ -32,4 +37,18 @@
 .carList li {
   margin: 10px 0;
   font-size: 1.2em;
+}
+
+.overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
