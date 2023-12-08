@@ -1,0 +1,15 @@
+.myListingsContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.myListingsContainer h1 {
+  text-align: center; /* Center the text */
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #333;
+}

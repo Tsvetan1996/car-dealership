@@ -65,3 +65,11 @@ export const remove = async (carId) => {
   const result = await response.json();
   return result;
 };
+
+export const getUserListings = async (userId) => {
+  const response = await fetch(baseUrl);
+
+  const result = await response.json();
+
+  return Object.values(result.filter((car) => car._ownerId === userId));
+};

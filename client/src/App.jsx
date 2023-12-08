@@ -14,6 +14,7 @@ import CarEdit from "./components/car-edit/CarEdit";
 import "./App.module.css";
 import Contacts from "./components/contacts/Contacts";
 import AuthGuard from "./components/guards/AuthGuard";
+import MyListings from "./components/my-listings/MyListings";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route element={<AuthGuard />}>
             <Route path="/cars/sell" element={<SellCar />} />
             <Route path="/cars/:carId/edit" element={<CarEdit />} />
+            <Route path="/my-listings" element={<MyListings />} />
             <Route path="/logout" element={<Logout />} />
           </Route>
         </Routes>

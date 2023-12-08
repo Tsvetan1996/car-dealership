@@ -5,7 +5,7 @@ import { useContext } from "react";
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const { isAuthenticated, username } = useContext(AuthContext);
+  const { isAuthenticated, email } = useContext(AuthContext);
 
   return (
     <header className={styles.appHeader}>
@@ -22,6 +22,9 @@ export default function Header() {
             <>
               <li>
                 <Link to="/cars/sell">Sell car</Link>
+              </li>
+              <li>
+                <Link to="/my-listings">My listings</Link>
               </li>
               <li>
                 <Link to="/logout">Logout</Link>
@@ -42,7 +45,7 @@ export default function Header() {
           <li>
             <Link to="/contacts">Contacts</Link>
           </li>
-          <span>{username}</span>
+          <span>{email}</span>
         </ul>
       </nav>
     </header>
