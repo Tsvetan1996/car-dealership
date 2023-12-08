@@ -39,6 +39,10 @@ export default function Header() {
               </li>
             </>
           )}
+          <li>
+            <Link to="/contacts">Contacts</Link>
+          </li>
+          <span>{username}</span>
         </ul>
       </nav>
     </header>

@@ -1,4 +1,5 @@
-import { useContext } from "react";
+// Login.jsx
+import { useContext, useEffect } from "react";
 import useForm from "../../hooks/useForm";
 import AuthContext from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
@@ -11,16 +12,26 @@ const loginFormKeys = {
 };
 
 export default function Login() {
-  const { loginSubmitHandler } = useContext(AuthContext);
+  const { loginSubmitHandler, error, clearError } = useContext(AuthContext);
 
   const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
     [loginFormKeys.email]: "",
     [loginFormKeys.password]: "",
   });
 
+  useEffect(() => {
+    // Clear the error message when the component unmounts or when a new error is set
+    return () => {
+      setTimeout(() => {
+        clearError();
+      }, 3000);
+    };
+  }, [clearError]);
+
   return (
     <div className={styles.loginContainer}>
       <h2>Login</h2>
+      {error && <p className={styles.error}>{error}</p>}
       <form onSubmit={onSubmit}>
         <label htmlFor="email">Email:</label>
         <input

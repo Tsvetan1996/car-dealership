@@ -1,13 +1,16 @@
-/* Home.module.css */
-
 .homeContainer {
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align items to the top of the container */
-  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchSection,
+.lastThreeAddedCars {
+  margin-top: 20px; /* Adjust the margin between sections */
 }
 
 .overlay {
@@ -16,7 +19,7 @@
   text-align: center;
   color: #fff;
   animation: fadeIn 1s ease-in-out;
-  width: 100%; /* Make the overlay take the full width */
+  width: 100%;
 }
 
 .overlay h1 {
@@ -32,10 +35,11 @@
 .carList {
   list-style: none;
   padding: 0;
+  display: flex;
 }
 
 .carList li {
-  margin: 10px 0;
+  margin: 0 10px;
   font-size: 1.2em;
 }
 
@@ -44,11 +48,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.lastThreeAddedCars {
+  margin-top: auto; /* Move the last three added cars to the bottom */
+  margin-bottom: 200px; /* Adjust the margin at the bottom */
 }

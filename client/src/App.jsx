@@ -12,6 +12,7 @@ import CarDetails from "./components/car-details/CarDetails";
 import CarEdit from "./components/car-edit/CarEdit";
 
 import "./App.module.css";
+import Contacts from "./components/contacts/Contacts";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </div>
     </AuthProvider>

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import useForm from "../../hooks/useForm";
 import { Link } from "react-router-dom";
@@ -12,17 +12,48 @@ const RegisterFormKeys = {
 };
 
 export default function Register() {
-  const { registerSubmitHandler } = useContext(AuthContext);
+  const { registerSubmitHandler, error, setError, clearError } =
+    useContext(AuthContext);
   const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
     [RegisterFormKeys.email]: "",
     [RegisterFormKeys.password]: "",
     [RegisterFormKeys.confirmPassword]: "",
   });
 
+  const passwordMatch =
+    values[RegisterFormKeys.password] ===
+    values[RegisterFormKeys.confirmPassword];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    clearError();
+    if (!passwordMatch) {
+      clearError();
+      setError("Passwords do not match");
+
+      setTimeout(() => {
+        clearError();
+      }, 3000);
+
+      return;
+    }
+    await onSubmit(e);
+  };
+
+  useEffect(() => {
+    // Clear the error message when the component unmounts or when a new error is set
+    return () => {
+      setTimeout(() => {
+        clearError();
+      }, 3000);
+    };
+  }, [clearError]);
+
   return (
     <div className={styles.registerContainer}>
       <h2>Register</h2>
-      <form onSubmit={onSubmit}>
+      {error && <p className={styles.error}>{error}</p>}
+      <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
         <input
           type="email"

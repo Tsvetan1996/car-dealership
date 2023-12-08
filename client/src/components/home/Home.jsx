@@ -48,21 +48,46 @@ export default function Home() {
     }
   };
 
+  // Function to get the last three added cars
+  const lastAddedCars = () => {
+    const sortedCars = [...cars].sort(
+      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+    );
+    return sortedCars.slice(0, 3);
+  };
+
   return (
     <div className={styles.homeContainer}>
-      <div className={styles.overlay}>
-        <h1>Search a car by brand or model</h1>
-        <Search onSearch={handleSearch} />
+      {/* Search Section */}
+      <div className={styles.searchSection}>
+        <div className={styles.overlay}>
+          <h1>Search a car by brand or model</h1>
+          <Search onSearch={handleSearch} />
 
-        {searchPerformed && filteredCars.length > 0 ? (
+          {searchPerformed && filteredCars.length > 0 ? (
+            <div className={styles.carList}>
+              {filteredCars.map((car) => (
+                <DashboardItem key={car._id} {...car} />
+              ))}
+            </div>
+          ) : (
+            searchPerformed && (
+              <p>No cars found. Try a different search term.</p>
+            )
+          )}
+        </div>
+      </div>
+
+      {/* Last Three Added Cars Section */}
+      <div className={styles.lastThreeAddedCars}>
+        <div className={styles.overlay}>
+          <h2>Last Three Added Cars</h2>
           <div className={styles.carList}>
-            {filteredCars.map((car) => (
+            {lastAddedCars().map((car) => (
               <DashboardItem key={car._id} {...car} />
             ))}
           </div>
-        ) : (
-          searchPerformed && <p>No cars found. Try a different search term.</p>
-        )}
+        </div>
       </div>
     </div>
   );
