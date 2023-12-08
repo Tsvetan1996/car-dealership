@@ -13,6 +13,7 @@ import CarEdit from "./components/car-edit/CarEdit";
 
 import "./App.module.css";
 import Contacts from "./components/contacts/Contacts";
+import AuthGuard from "./components/guards/AuthGuard";
 
 function App() {
   return (
@@ -23,13 +24,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cars" element={<Dashboard />} />
-          <Route path="/cars/sell" element={<SellCar />} />
-          <Route path="/details/:carId" element={<CarDetails />} />
-          <Route path="/cars/:carId/edit" element={<CarEdit />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
+          <Route path="/details/:carId" element={<CarDetails />} />
           <Route path="/contacts" element={<Contacts />} />
+
+          <Route element={<AuthGuard />}>
+            <Route path="/cars/sell" element={<SellCar />} />
+            <Route path="/cars/:carId/edit" element={<CarEdit />} />
+            <Route path="/logout" element={<Logout />} />
+          </Route>
         </Routes>
       </div>
     </AuthProvider>
