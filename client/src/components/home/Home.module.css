@@ -10,7 +10,7 @@
 
 .searchSection,
 .lastThreeAddedCars {
-  margin-top: 20px; /* Adjust the margin between sections */
+  margin-top: 20px;
 }
 
 .overlay {
@@ -49,6 +49,6 @@
 }
 
 .lastThreeAddedCars {
-  margin-top: auto; /* Move the last three added cars to the bottom */
-  margin-bottom: 200px; /* Adjust the margin at the bottom */
+  margin-top: auto;
+  margin-bottom: 200px;
 }

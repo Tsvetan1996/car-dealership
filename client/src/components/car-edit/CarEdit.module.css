@@ -11,15 +11,17 @@
   margin-top: 20px;
 }
 
-.detailsContent img {
-  max-width: 100%;
-  height: auto;
+.detailsContent label {
   display: block;
   margin-bottom: 10px;
 }
 
-.detailsContent p {
-  margin: 10px 0;
+.detailsContent input,
+.detailsContent textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 .actionButton {
@@ -30,4 +32,5 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  margin-right: 10px;
 }

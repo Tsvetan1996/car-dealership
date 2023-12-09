@@ -13,7 +13,9 @@ export default function Search({ onSearch }) {
   return (
     <div className={styles.searchContainer}>
       <div className={styles.searchField}>
-        <label htmlFor="brand">Brand:</label>
+        <label htmlFor="brand" style={{ color: "blue" }}>
+          Brand:
+        </label>
         <input
           type="text"
           id="brand"
@@ -22,13 +24,13 @@ export default function Search({ onSearch }) {
           onChange={(e) => setBrandQuery(e.target.value)}
         />
 
-        <button onClick={handleSearch} className={styles.button}>
-          Search
-        </button>
+        <button onClick={handleSearch}>Search</button>
       </div>
 
       <div className={styles.searchField}>
-        <label htmlFor="model">Model:</label>
+        <label htmlFor="model" style={{ color: "blue" }}>
+          Model:
+        </label>
         <input
           type="text"
           id="model"
