@@ -1,4 +1,3 @@
-// Login.jsx
 import { useContext, useEffect } from "react";
 import useForm from "../../hooks/useForm";
 import AuthContext from "../../contexts/AuthContext";

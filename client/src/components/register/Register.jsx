@@ -41,7 +41,6 @@ export default function Register() {
   };
 
   useEffect(() => {
-    // Clear the error message when the component unmounts or when a new error is set
     return () => {
       setTimeout(() => {
         clearError();

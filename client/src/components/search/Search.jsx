@@ -6,7 +6,7 @@ export default function Search({ onSearch }) {
   const [modelQuery, setModelQuery] = useState("");
 
   const handleSearch = () => {
-    // Pass both search queries to the parent component
+    // Pass both search queries to the Home component
     onSearch({ brand: brandQuery, model: modelQuery });
   };
 

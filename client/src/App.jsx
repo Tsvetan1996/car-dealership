@@ -11,10 +11,11 @@ import Logout from "./components/logout/Logout";
 import CarDetails from "./components/car-details/CarDetails";
 import CarEdit from "./components/car-edit/CarEdit";
 
-import "./App.module.css";
 import Contacts from "./components/contacts/Contacts";
 import AuthGuard from "./components/guards/AuthGuard";
 import MyListings from "./components/my-listings/MyListings";
+
+import "./App.module.css";
 
 function App() {
   return (
